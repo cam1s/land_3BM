@@ -7,7 +7,7 @@ async function storeTask(request, response) {
         request.body.tittle,
         request.body.description
     );
-    const query = "INSERT INTO db_tasks(tittle,description) VALUES(?,?)";
+    const query = "INSERT INTO bd_tasks(tittle,description) VALUES(?,?)";
 
     connection.query(query, params, (err, results) => {
         if (results) {
@@ -24,6 +24,7 @@ async function storeTask(request, response) {
                 .json({
                     success: false,
                     message: "Ops, deu problema!",
+                    data: err
                 })
         }
     })

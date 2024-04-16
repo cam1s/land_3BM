@@ -7,7 +7,7 @@ async function storeTask(request, response) {
         request.body.tittle,
         request.body.description
     );
-    const query = "INSERT INTO bd_tasks(tittle,description) VALUES(?,?)";
+    const query = "INSERT INTO tasks(tittle,description) VALUES(?,?)";
 
     connection.query(query, params, (err, results) => {
         if (results) {
